@@ -5,7 +5,7 @@ extents = Vector2( 20, 20 )
 
 [node name="TowerBlock" type="RigidBody2D"]
 collision_layer = 4
-mass = 300.0
+mass = 1.4
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -20.0
