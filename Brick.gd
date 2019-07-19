@@ -39,18 +39,10 @@ var pressed = false
 func _on_ColorRect_gui_input(event):
 	if event is InputEventMouseButton:
 		pressed = event.pressed
-	elif event is InputEventMouseMotion:
-		if false:
-			#collision.position = event.position
-			#color.position = event.position
-			var force = event.global_position - self.position
-			print(force)
-			self.applied_force = 100 * force
 
 func _process(data):
 	if pressed:
 		var force = get_viewport().get_mouse_position() - self.position
-		#print(force)
 		self.applied_force = force
 	else:
 		self.applied_force = Vector2(0, 0)
