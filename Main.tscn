@@ -15,12 +15,3 @@ Brick = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 500, 610 )
 shape = SubResource( 1 )
-
-[node name="Node2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 199.794, 78.6755 )
-
-[node name="Node2D2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 85.922, 82.8163 )
-
-[node name="Node2D3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 191.513, 41.4081 )
