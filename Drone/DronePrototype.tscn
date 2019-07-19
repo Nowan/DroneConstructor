@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Drone/EngineRight.gd" type="Script" id=1]
+[ext_resource path="res://Drone/EngineLeft.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 40, 40 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 30, 15 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 30, 15 )
+
+[node name="Drone" type="Node2D"]
+
+[node name="DronBody" type="RigidBody2D" parent="."]
+mass = 3.0
+linear_velocity = Vector2( 0, -100 )
+
+[node name="DronColor" type="ColorRect" parent="DronBody"]
+margin_left = -40.0
+margin_top = -40.0
+margin_right = 40.0
+margin_bottom = 40.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="BodyCollision" type="CollisionShape2D" parent="DronBody"]
+shape = SubResource( 1 )
+
+[node name="EngineRight" type="RigidBody2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="EngineRightColor" type="ColorRect" parent="EngineRight"]
+margin_left = 40.0
+margin_top = -40.0
+margin_right = 100.0
+margin_bottom = -10.0
+
+[node name="RightEngineCollision" type="CollisionShape2D" parent="EngineRight"]
+position = Vector2( 70, -25 )
+shape = SubResource( 2 )
+
+[node name="EngineLeft" type="RigidBody2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="EngineLeftColor" type="ColorRect" parent="EngineLeft"]
+margin_left = -100.0
+margin_top = -40.0
+margin_right = -40.0
+margin_bottom = -10.0
+
+[node name="LeftEngineCollision" type="CollisionShape2D" parent="EngineLeft"]
+position = Vector2( -70, -25 )
+shape = SubResource( 3 )
+
+[node name="BTRE" type="PinJoint2D" parent="."]
+node_a = NodePath("../DronBody")
+node_b = NodePath("../EngineRight")
+bias = 0.9
+disable_collision = false
+
+[node name="BTLE" type="PinJoint2D" parent="."]
+node_a = NodePath("../DronBody")
+node_b = NodePath("../EngineLeft")
+bias = 0.9
+disable_collision = false
