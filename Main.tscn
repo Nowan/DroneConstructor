@@ -1,8 +1,26 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://Brick.tscn" type="PackedScene" id=2]
 
-[node name="Label" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
-text = "Hello, world!"
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 600, 10 )
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+Brick = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 500, 610 )
+shape = SubResource( 1 )
+
+[node name="Node2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 199.794, 78.6755 )
+
+[node name="Node2D2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 85.922, 82.8163 )
+
+[node name="Node2D3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 191.513, 41.4081 )
