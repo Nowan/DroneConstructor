@@ -5,8 +5,8 @@ export (PackedScene) var Brick
 const UNIT_SIZE = 10
 const MAX_BRICKS = 8
 const MAX_DIM_DIFF = 3
-const MASS_BASE = 0.4
-const MASS_COEFF = 0.15
+const MASS_BASE = 0.38
+const MASS_COEFF = 0.19
 
 onready var collision = get_node("Collision")
 onready var color = get_node("ColorRect")
