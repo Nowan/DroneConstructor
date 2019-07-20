@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/ground.png-328d82a69941a655cdd4638d3455ed11.image"
+
+[deps]
+
+source_file="res://assets/ground.png"
+dest_files=[ "res://.import/ground.png-328d82a69941a655cdd4638d3455ed11.image" ]
+
+[params]
+
