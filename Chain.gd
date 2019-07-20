@@ -35,10 +35,12 @@ var is_full = false
 	
 func _physics_process(dt):
 	var joint = hook.get_node("PinJoint2D")
+	var sound = hook.get_node("MagnetSound")
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		if is_full:
 			joint.set_node_b(NodePath());
+			sound.playing = false
 			is_full = false;
 		else:
 			var sensor = hook.get_node("HandSensor")
@@ -48,4 +50,5 @@ func _physics_process(dt):
 				var tower_block = tower_blocks[0];
 				print(tower_block);
 				joint.set_node_b(tower_block.get_path());
+				sound.playing = true
 				is_full = true;

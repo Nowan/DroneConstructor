@@ -1,4 +1,4 @@
-extends Node2D
+extends RigidBody2D
 
 export (PackedScene) var Brick
 
@@ -40,13 +40,5 @@ func _ready():
 
 var pressed = false
 
-func _on_ColorRect_gui_input(event):
-	if event is InputEventMouseButton:
-		pressed = event.pressed
-
-func _process(data):
-	if pressed:
-		var force = get_viewport().get_mouse_position() - self.position
-		self.applied_force = force
-	else:
-		self.applied_force = Vector2(0, 0)
+func _on_Brick_body_entered(body):
+	get_node("HitSound").playing = true
