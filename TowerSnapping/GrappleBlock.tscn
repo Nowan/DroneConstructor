@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://TowerSnapping/TowerBlock.tscn" type="PackedScene" id=1]
+[ext_resource path="res://TowerSnapping/GrappleBlock.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 40, 40 )
+
+[node name="GrappleBlock" instance=ExtResource( 1 )]
+collision_layer = 2
+collision_mask = 5
+mass = 1.0
+script = ExtResource( 2 )
+
+[node name="CollisionSensor" type="Area2D" parent="." index="2"]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionSensor" index="0"]
+shape = SubResource( 1 )
