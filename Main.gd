@@ -22,6 +22,7 @@ func create_watcher(id: int):
 	var new_watcher = RayCast2D.new()
 	new_watcher.position = Vector2(get_position(id), 500)
 	new_watcher.cast_to = Vector2(0, 99)
+	new_watcher.collision_mask = 1 | 4
 	new_watcher.enabled = true
 	add_child(new_watcher)
 	return new_watcher

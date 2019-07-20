@@ -4,10 +4,10 @@
 [ext_resource path="res://rope-transparent-4.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9.5, 0.9 )
+extents = Vector2( 6, 0.9 )
 
 [node name="Link" type="RigidBody2D"]
-mass = 0.1
+mass = 0.05
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -15,12 +15,15 @@ position = Vector2( 0, 0.05 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+visible = false
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 100, 100 )
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
-position = Vector2( 9.99639, 0.095952 )
+position = Vector2( 7, 0.096 )
 scale = Vector2( 0.1, 0.1 )
 node_a = NodePath("..")
+bias = 0.3
 disable_collision = false
+softness = 1.0

@@ -76,7 +76,7 @@ shape = SubResource( 3 )
 script = ExtResource( 3 )
 
 [node name="HandJoint" type="PinJoint2D" parent="Drone/Grapple/PinJoint2D/Link0/PinJoint2D2/Link1/Hand"]
-position = Vector2( 0, 40 )
+position = Vector2( -1, 40 )
 node_a = NodePath("../..")
 
 [node name="HandSensor" type="Area2D" parent="Drone/Grapple/PinJoint2D/Link0/PinJoint2D2/Link1/Hand"]
