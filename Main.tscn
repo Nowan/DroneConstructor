@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Brick.tscn" type="PackedScene" id=2]
+[ext_resource path="res://DroneWithChain.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 600, 10 )
@@ -15,3 +16,5 @@ Brick = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 500, 610 )
 shape = SubResource( 1 )
+
+[node name="DroneWithChain" parent="." instance=ExtResource( 3 )]
