@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Drone/DronePrototype.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Drone/Drone.tscn" type="PackedScene" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 150, 20 )
@@ -19,4 +19,4 @@ position = Vector2( 150, 20 )
 shape = SubResource( 1 )
 
 [node name="Drone" parent="." instance=ExtResource( 1 )]
-position = Vector2( 421.108, 281.307 )
+position = Vector2( 429, 299 )
