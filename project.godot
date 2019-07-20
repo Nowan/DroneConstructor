@@ -70,7 +70,6 @@ right_engine_culvert_change={
  ]
 }
 
-
 [layer_names]
 
 2d_physics/layer_1="Player"
