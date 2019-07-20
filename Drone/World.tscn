@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Drone/DronePrototype.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Drone/debug_draw.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 150, 20 )
@@ -19,4 +20,10 @@ position = Vector2( 150, 20 )
 shape = SubResource( 1 )
 
 [node name="Drone" parent="." instance=ExtResource( 1 )]
-position = Vector2( 421.108, 281.307 )
+position = Vector2( 424.977, 366.423 )
+
+[node name="Camera2D" type="Camera2D" parent="Drone"]
+position = Vector2( 1.121, 1.25964 )
+current = true
+
+[node name="debug_draw" parent="." instance=ExtResource( 2 )]
