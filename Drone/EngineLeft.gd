@@ -14,13 +14,13 @@ func _integrate_forces(state):
 	engineStatus = engineMemoryStatus
 
 	if Input.is_action_pressed("left_engine_accelerate"):
-		var acceleration = -1 #Input.get_joy_axis(0, JOY_AXIS_1) * FORCE_MULTIPLIER
+		var acceleration = Input.get_joy_axis(0, JOY_AXIS_1) * FORCE_MULTIPLIER
 		if engineStatus + acceleration < MAX_ACCELERATION:
 			acceleration = MAX_ACCELERATION - engineStatus
 		engineStatus += acceleration
 		
 	if Input.is_action_pressed("left_engine_deffering"):
-		var deffering = 1 # Input.get_joy_axis(0, JOY_AXIS_1) * FORCE_MULTIPLIER
+		var deffering = Input.get_joy_axis(0, JOY_AXIS_1) * FORCE_MULTIPLIER
 		if engineStatus + deffering > MAX_DEFFERING:
 			deffering = MAX_DEFFERING - engineStatus
 		engineStatus += deffering

@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/bg.png-23a59c2e9cba2223a50fa3fe41b70b25.image"
+
+[deps]
+
+source_file="res://assets/bg.png"
+dest_files=[ "res://.import/bg.png-23a59c2e9cba2223a50fa3fe41b70b25.image" ]
+
+[params]
+

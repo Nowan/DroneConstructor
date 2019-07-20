@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/block.png-6b64ddb83a5b052a86170f1e6353c630.image"
+
+[deps]
+
+source_file="res://assets/block.png"
+dest_files=[ "res://.import/block.png-6b64ddb83a5b052a86170f1e6353c630.image" ]
+
+[params]
+

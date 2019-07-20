@@ -5,11 +5,11 @@ export (PackedScene) var Brick
 const UNIT_SIZE = 10
 const MAX_BRICKS = 8
 const MAX_DIM_DIFF = 3
-const MASS_BASE = 0.4
-const MASS_COEFF = 0.15
+const MASS_BASE = 0.38
+const MASS_COEFF = 0.19
 
 onready var collision = get_node("Collision")
-onready var color = get_node("ColorRect")
+onready var sprite = get_node("Sprite")
 
 func _ready():
 	randomize()
@@ -31,14 +31,10 @@ func _ready():
 	collision_shape.extents.y = height * UNIT_SIZE
 	collision.shape = collision_shape
 
-	color.margin_left = -width * UNIT_SIZE
-	color.margin_right = width * UNIT_SIZE
-	color.margin_top = -height * UNIT_SIZE
-	color.margin_bottom = height * UNIT_SIZE
+	sprite.region_rect.size .x = width * 22
+	sprite.region_rect.size .y = height * 22;
 	
 	self.mass = MASS_BASE + width * height * MASS_COEFF
-
-var pressed = false
 
 func _on_Brick_body_entered(body):
 	get_node("HitSound").playing = true

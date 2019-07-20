@@ -1,8 +1,8 @@
 extends RigidBody2D
 
 const FORCE_MULTIPLIER = 2
-const MAX_ACCELERATION = -500
-const MAX_DEFFERING = 500
+const MAX_ACCELERATION = -350
+const MAX_DEFFERING = 350
 
 const MIN_PITCH = 0.1
 const MAX_PITCH = 15

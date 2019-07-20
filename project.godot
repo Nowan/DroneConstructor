@@ -19,6 +19,12 @@ config/name="DroneConstructor"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/fullscreen=true
+
 [input]
 
 left_engine_accelerate={
@@ -79,9 +85,9 @@ right_engine_culvert_change={
 
 [physics]
 
-2d/default_gravity=150
 2d/default_linear_damp=1.0
 
 [rendering]
 
+environment/default_clear_color=Color( 0.92549, 0.756863, 0.545098, 1 )
 environment/default_environment="res://default_env.tres"
