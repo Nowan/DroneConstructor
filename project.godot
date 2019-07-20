@@ -79,6 +79,7 @@ right_engine_culvert_change={
 
 [physics]
 
+2d/default_gravity=150
 2d/default_linear_damp=1.0
 
 [rendering]

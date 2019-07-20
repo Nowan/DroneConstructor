@@ -36,7 +36,7 @@ var is_full = false
 func _physics_process(dt):
 	var joint = hook.get_node("PinJoint2D")
 	
-	if Input.is_action_just_pressed("ui_select"):
+	if Input.is_action_just_pressed("ui_accept"):
 		if is_full:
 			joint.set_node_b(NodePath());
 			is_full = false;

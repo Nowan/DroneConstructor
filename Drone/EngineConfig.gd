@@ -1,8 +1,8 @@
 extends RigidBody2D
 
-const FORCE_MULTIPLIER = 5
-const MAX_ACCELERATION = -600
-const MAX_DEFFERING = 600
+const FORCE_MULTIPLIER = 2
+const MAX_ACCELERATION = -500
+const MAX_DEFFERING = 500
 
 func _set_calculated_force(engineSide, engineStatus):
 	var appliedForce = Vector2(0,engineStatus)

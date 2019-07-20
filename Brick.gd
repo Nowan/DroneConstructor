@@ -5,6 +5,8 @@ export (PackedScene) var Brick
 const UNIT_SIZE = 10
 const MAX_BRICKS = 8
 const MAX_DIM_DIFF = 3
+const MASS_BASE = 0.4
+const MASS_COEFF = 0.15
 
 onready var collision = get_node("Collision")
 onready var color = get_node("ColorRect")
@@ -33,6 +35,8 @@ func _ready():
 	color.margin_right = width * UNIT_SIZE
 	color.margin_top = -height * UNIT_SIZE
 	color.margin_bottom = height * UNIT_SIZE
+	
+	self.mass = MASS_BASE + width * height * MASS_COEFF
 
 var pressed = false
 

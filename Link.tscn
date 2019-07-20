@@ -15,7 +15,6 @@ position = Vector2( 0, 0.05 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-visible = false
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 100, 100 )
@@ -24,6 +23,6 @@ region_rect = Rect2( 0, 0, 100, 100 )
 position = Vector2( 7, 0.096 )
 scale = Vector2( 0.1, 0.1 )
 node_a = NodePath("..")
-bias = 0.3
+bias = 0.5
 disable_collision = false
-softness = 1.0
+softness = 0.5
