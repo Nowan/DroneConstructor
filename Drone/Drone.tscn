@@ -31,7 +31,7 @@ rotation = -0.349066
 shape = SubResource( 2 )
 
 [node name="EngineL" type="RigidBody2D" parent="."]
-editor/display_folded = true
+mode = 2
 angular_damp = 128.0
 script = ExtResource( 1 )
 
@@ -40,7 +40,7 @@ position = Vector2( -30.5483, -11.9617 )
 shape = SubResource( 3 )
 
 [node name="EngineR" type="RigidBody2D" parent="."]
-editor/display_folded = true
+mode = 2
 angular_damp = 128.0
 script = ExtResource( 2 )
 

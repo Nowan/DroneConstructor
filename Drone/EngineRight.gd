@@ -1,10 +1,31 @@
 extends RigidBody2D
 
+onready var body = get_parent().get_node("Core");
+
+var MAX_TURBINE_VELOCITY = 300;
+var JOY_AXIS_MULTIPLIER = 20;
+
+var turbine_velocity = 0;
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	if Input.is_action_pressed("right_engine_accelerate"):
-		set_applied_force(Vector2(0, Input.get_joy_axis(0, JOY_AXIS_3) * 300))
-	if Input.is_action_pressed("right_engine_decelerate"):
-		set_applied_force(Vector2(0, Input.get_joy_axis(0, JOY_AXIS_3) * 300))
+		var joy_axis = Vector2(0, Input.get_joy_axis(0, JOY_AXIS_3)).y;
+		turbine_velocity = min(turbine_velocity - joy_axis * JOY_AXIS_MULTIPLIER, MAX_TURBINE_VELOCITY);
+	
+	if Input.is_action_pressed("right_engine_decellerate"):
+		var joy_axis = Vector2(0, Input.get_joy_axis(0, JOY_AXIS_3)).y;
+		turbine_velocity = max(turbine_velocity + joy_axis * JOY_AXIS_MULTIPLIER, 0);
+	
+	if body:
+		set_applied_force(Vector2(-turbine_velocity * sin(body.rotation), -turbine_velocity * cos(body.rotation)));
+	
+		
+#func _physics_process(delta):
+#	if Input.is_action_pressed("right_engine_accelerate"):
+#		set_applied_force(Vector2(0, Input.get_joy_axis(0, JOY_AXIS_3) * 300))
+#	if Input.is_action_pressed("right_engine_decelerate"):
+#		set_applied_force(Vector2(0, Input.get_joy_axis(0, JOY_AXIS_3) * 300))
 #
 #const FORCE_MULTIPLIER = 5
 #const MAX_ACCELERATION = -1000
