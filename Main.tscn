@@ -4,10 +4,10 @@
 [ext_resource path="res://Brick.tscn" type="PackedScene" id=2]
 [ext_resource path="res://DroneWithChain.tscn" type="PackedScene" id=3]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 260.638, 10 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 90, 10 )
 
 [node name="Main" type="Node2D"]
@@ -22,7 +22,7 @@ collision_mask = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 840.685, 610 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2( 58.7152, -129.062 )
@@ -30,7 +30,7 @@ collision_mask = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2( 228.43, 662.325 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D2/CollisionShape2D"]
 margin_left = -90.0
