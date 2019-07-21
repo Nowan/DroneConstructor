@@ -23,6 +23,8 @@ func _process(data):
 func _input(event):
 	if event.is_action_pressed("exit"):
 		get_tree().quit()
+	if event.is_action_pressed("game_reset"):
+		get_tree().reload_current_scene()
 
 func create_watcher(id: int):
 	var new_watcher = RayCast2D.new()
