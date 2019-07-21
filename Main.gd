@@ -6,6 +6,11 @@ const NUM_BLOCKS = 3
 const SPACING = 100
 const OFFSET = 600
 
+const MAX_SIGNAL = 100
+const SIGNAL_DISTANCE_DIFFERENCE = 550
+const MAX_SIGNAL_DISTANCE = 5000
+onready var signalBar = get_node("DroneWithChain/Drone2/Control/SignalStrenght")
+
 onready var pointsLabel = get_node("Points")
 
 var watchers = []
@@ -14,11 +19,16 @@ func _ready():
 	for block_id in range(NUM_BLOCKS):
 		watchers.append(create_watcher(block_id))
 		create_brick(block_id)
+	
+	signalBar.max_value = MAX_SIGNAL
+	signalBar.value = 0
 
 func _process(data):
 	for block_id in range(NUM_BLOCKS):
 		if !watchers[block_id].is_colliding():
 			create_brick(block_id)
+			
+	measureDistance()
 			
 func _input(event):
 	if event.is_action_pressed("exit"):
@@ -58,4 +68,13 @@ func _on_Area2D_body_exited(body):
 
 func _on_DroneWithChain_drone_with_chain_hit():
 	get_node("GameOverSound").playing = true
-	get_node("DroneWithChain").show_game_over()
+	get_tree().reload_current_scene()
+	
+func measureDistance():
+	var truckPosition = get_node("Truck").global_position
+	var dronePosition = get_node("DroneWithChain/Drone2").get_position()
+	var distanceBetween = dronePosition.distance_to(truckPosition)
+	if distanceBetween - SIGNAL_DISTANCE_DIFFERENCE > MAX_SIGNAL_DISTANCE:
+		get_tree().reload_current_scene()
+	else:
+		signalBar.value = 100 - distanceBetween / MAX_SIGNAL_DISTANCE * 100

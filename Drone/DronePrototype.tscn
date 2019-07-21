@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Drone/Drone.gd" type="Script" id=1]
 [ext_resource path="res://Drone/EngineRight.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Drone/EngineLeft.gd" type="Script" id=6]
 [ext_resource path="res://assets/engine_left.png" type="Texture" id=7]
 [ext_resource path="res://assets/body.png" type="Texture" id=8]
+[ext_resource path="res://UI/SignalMeter.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 40, 40 )
@@ -124,4 +125,6 @@ margin_right = -47.0
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 8 )
+
+[node name="Control" parent="." instance=ExtResource( 9 )]
 [connection signal="body_entered" from="." to="." method="_on_Drone_body_entered"]
