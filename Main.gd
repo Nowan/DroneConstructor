@@ -52,3 +52,8 @@ func _on_Area2D_body_exited(body):
 	if body.get_filename() == "res://Brick.tscn":
 		points -= body.area
 		pointsLabel.text = "Points: " + str(points)
+
+
+func _on_DroneWithChain_drone_with_chain_hit():
+	get_node("GameOverSound").playing = true
+	get_node("DroneWithChain").show_game_over()

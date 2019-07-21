@@ -1,5 +1,7 @@
-extends Node
+extends Node2D
+
+signal drone_hit
 
 func _on_Drone_body_entered(body):
-	print("coll")
-	get_node("GameOverSound").playing = true
+	if body.is_in_group("game_over"):
+		emit_signal("drone_hit")
