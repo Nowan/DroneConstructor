@@ -6,6 +6,8 @@ const NUM_BLOCKS = 3
 const SPACING = 100
 const OFFSET = 600
 
+onready var pointsLabel = get_node("Points")
+
 var watchers = []
 
 func _ready():
@@ -38,3 +40,15 @@ func create_brick(id: int):
 
 func get_position(id: int):
 	return OFFSET + id * SPACING
+
+var points = 0
+
+func _on_Area2D_body_entered(body):
+	if body.get_filename() == "res://Brick.tscn":
+		points += body.area
+		pointsLabel.text = "Points: " + str(points)
+
+func _on_Area2D_body_exited(body):
+	if body.get_filename() == "res://Brick.tscn":
+		points -= body.area
+		pointsLabel.text = "Points: " + str(points)

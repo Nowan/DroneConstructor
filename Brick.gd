@@ -11,6 +11,8 @@ const MASS_COEFF = 0.19
 onready var collision = get_node("Collision")
 onready var sprite = get_node("Sprite")
 
+var area = 0
+
 func _ready():
 	randomize()
 	
@@ -34,7 +36,9 @@ func _ready():
 	sprite.region_rect.size .x = width * 22
 	sprite.region_rect.size .y = height * 22;
 	
-	self.mass = MASS_BASE + width * height * MASS_COEFF
+	area = width * height
+	
+	self.mass = MASS_BASE + area * MASS_COEFF
 
 func _on_Brick_body_entered(body):
 	get_node("HitSound").playing = true
