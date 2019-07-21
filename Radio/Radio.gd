@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends Node2D
 
 func _ready():
 	pass
