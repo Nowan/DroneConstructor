@@ -13,7 +13,7 @@ script = ExtResource( 1 )
 [node name="Chain" parent="." instance=ExtResource( 3 )]
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
-position = Vector2( 0.109543, 3.8147e-006 )
+position = Vector2( 0.109543, 3.8147e-06 )
 node_a = NodePath("../Drone2")
 
 [node name="Drone2" parent="." instance=ExtResource( 4 )]

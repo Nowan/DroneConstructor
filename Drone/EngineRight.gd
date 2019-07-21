@@ -2,6 +2,9 @@ extends "res://Drone/EngineConfig.gd"
 
 var engineStatus = 0
 var engineMemoryStatus = 0
+var enginePreviousStatus = 0
+
+onready var sound = get_node("RightEngineSound")
 
 func _ready():
 	pass # Replace with function body.
@@ -28,5 +31,8 @@ func _integrate_forces(state):
 	if Input.is_action_pressed("right_engine_power_off"):
 		engineMemoryStatus = engineStatus
 		engineStatus = 0
+		
+	audio_tick(sound, engineStatus, enginePreviousStatus)
 
 	_set_calculated_force("Right", engineStatus)
+	enginePreviousStatus = engineStatus

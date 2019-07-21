@@ -2,6 +2,9 @@ extends "res://Drone/EngineConfig.gd"
 
 var engineStatus = 0
 var engineMemoryStatus = 0
+var enginePreviousStatus = 0
+
+onready var sound = get_node("LeftEngineSound")
 
 func _ready():
 	pass # Replace with function body.
@@ -15,11 +18,13 @@ func _integrate_forces(state):
 		if engineStatus + acceleration < MAX_ACCELERATION:
 			acceleration = MAX_ACCELERATION - engineStatus
 		engineStatus += acceleration
+		
 	if Input.is_action_pressed("left_engine_deffering"):
 		var deffering = Input.get_joy_axis(0, JOY_AXIS_1) * FORCE_MULTIPLIER
 		if engineStatus + deffering > MAX_DEFFERING:
 			deffering = MAX_DEFFERING - engineStatus
 		engineStatus += deffering
+	
 	engineMemoryStatus = engineStatus
 
 	if Input.is_action_pressed("left_engine_culvert_change"):
@@ -28,5 +33,9 @@ func _integrate_forces(state):
 	if Input.is_action_pressed("left_engine_power_off"):
 		engineMemoryStatus = engineStatus
 		engineStatus = 0
+		
+	audio_tick(sound, engineStatus, enginePreviousStatus)
 
 	_set_calculated_force("Left", engineStatus)
+	enginePreviousStatus = engineStatus
+	
