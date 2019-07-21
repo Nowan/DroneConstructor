@@ -19,15 +19,11 @@ config/name="DroneConstructor"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-EngineLeft="*res://Drone/EngineLeft.gd"
-EngineConfig="*res://Drone/EngineConfig.gd"
-
 [display]
 
 window/size/width=1920
 window/size/height=1080
+window/size/fullscreen=true
 
 [input]
 
