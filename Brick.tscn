@@ -19,7 +19,9 @@ data = {
 image = SubResource( 4 )
 size = Vector2( 22, 22 )
 
-[node name="Brick" type="RigidBody2D"]
+[node name="Brick" type="RigidBody2D" groups=[
+"game_over",
+]]
 collision_layer = 4
 collision_mask = 5
 contacts_reported = 5

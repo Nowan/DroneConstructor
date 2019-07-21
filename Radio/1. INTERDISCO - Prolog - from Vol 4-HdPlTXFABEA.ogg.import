@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/1. INTERDISCO - Prolog - from Vol 4-HdPlTXFABEA.ogg-2ddc7a43ebb1d7047cb1357ad9af6d56.oggstr"
+
+[deps]
+
+source_file="res://Radio/1. INTERDISCO - Prolog - from Vol 4-HdPlTXFABEA.ogg"
+dest_files=[ "res://.import/1. INTERDISCO - Prolog - from Vol 4-HdPlTXFABEA.ogg-2ddc7a43ebb1d7047cb1357ad9af6d56.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/5. Henryk Debich - Koncert a-moll.ogg-aed21bd7a4cab4596c3b0e1faf776dbe.oggstr"
+
+[deps]
+
+source_file="res://Radio/5. Henryk Debich - Koncert a-moll.ogg"
+dest_files=[ "res://.import/5. Henryk Debich - Koncert a-moll.ogg-aed21bd7a4cab4596c3b0e1faf776dbe.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

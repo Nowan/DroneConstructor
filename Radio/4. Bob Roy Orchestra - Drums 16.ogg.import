@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/4. Bob Roy Orchestra - Drums 16.ogg-a000ef8f0042235920a864ae69a3d05f.oggstr"
+
+[deps]
+
+source_file="res://Radio/4. Bob Roy Orchestra - Drums 16.ogg"
+dest_files=[ "res://.import/4. Bob Roy Orchestra - Drums 16.ogg-a000ef8f0042235920a864ae69a3d05f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -39,4 +39,4 @@ shape = SubResource( 2 )
 
 [node name="MagnetSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
-volume_db = -9.025
+volume_db = -3.008

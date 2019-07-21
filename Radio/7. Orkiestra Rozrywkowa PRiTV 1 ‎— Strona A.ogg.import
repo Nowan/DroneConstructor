@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/7. Orkiestra Rozrywkowa PRiTV 1 ‎— Strona A.ogg-1a4b1aa2ed129478110cd598fedfe957.oggstr"
+
+[deps]
+
+source_file="res://Radio/7. Orkiestra Rozrywkowa PRiTV 1 ‎— Strona A.ogg"
+dest_files=[ "res://.import/7. Orkiestra Rozrywkowa PRiTV 1 ‎— Strona A.ogg-1a4b1aa2ed129478110cd598fedfe957.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
