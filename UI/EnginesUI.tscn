@@ -8,11 +8,10 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="RightEngineAcceleration" type="TextureProgress" parent="."]
-margin_left = 110.0
-margin_top = -65.0
-margin_right = 170.0
-margin_bottom = -50.0
+[node name="EngineAcceleration" type="TextureProgress" parent="."]
+margin_left = -7.5
+margin_right = 52.5
+margin_bottom = 15.0
 rect_rotation = -90.0
 max_value = 350.0
 value = 150.0
@@ -21,37 +20,10 @@ texture_over = ExtResource( 2 )
 texture_progress = ExtResource( 3 )
 tint_progress = Color( 0, 1, 0, 1 )
 
-[node name="RightEngineDeffering" type="TextureProgress" parent="."]
-margin_left = 125.0
-margin_top = -65.0
-margin_right = 185.0
-margin_bottom = -50.0
-rect_rotation = 90.0
-max_value = 350.0
-value = 100.0
-texture_under = ExtResource( 1 )
-texture_over = ExtResource( 2 )
-texture_progress = ExtResource( 3 )
-tint_progress = Color( 1, 0, 0, 1 )
-
-[node name="LeftEngineAcceleration" type="TextureProgress" parent="."]
-margin_left = -125.0
-margin_top = -65.0
-margin_right = -65.0
-margin_bottom = -50.0
-rect_rotation = -90.0
-max_value = 350.0
-value = 150.0
-texture_under = ExtResource( 1 )
-texture_over = ExtResource( 2 )
-texture_progress = ExtResource( 3 )
-tint_progress = Color( 0, 1, 0, 1 )
-
-[node name="LeftEngineDeffering" type="TextureProgress" parent="."]
-margin_left = -110.0
-margin_top = -65.0
-margin_right = -50.0
-margin_bottom = -50.0
+[node name="EngineDeffering" type="TextureProgress" parent="."]
+margin_left = 7.0
+margin_right = 67.0
+margin_bottom = 15.0
 rect_rotation = 90.0
 max_value = 350.0
 value = 100.0

@@ -6,9 +6,6 @@ var enginePreviousStatus = 0
 
 onready var sound = get_node("LeftEngineSound")
 
-func _ready():
-	pass # Replace with function body.
-
 # Called every frame.
 func _integrate_forces(state):
 	engineStatus = engineMemoryStatus
@@ -36,6 +33,6 @@ func _integrate_forces(state):
 		
 	audio_tick(sound, engineStatus, enginePreviousStatus)
 
+	setEngineStatusBars(engineStatus)
 	_set_calculated_force("Left", engineStatus)
 	enginePreviousStatus = engineStatus
-	

@@ -6,9 +6,6 @@ var enginePreviousStatus = 0
 
 onready var sound = get_node("RightEngineSound")
 
-func _ready():
-	pass # Replace with function body.
-
 # Called every frame.
 func _integrate_forces(state):
 	engineStatus = engineMemoryStatus
@@ -18,11 +15,13 @@ func _integrate_forces(state):
 		if engineStatus + acceleration < MAX_ACCELERATION:
 			acceleration = MAX_ACCELERATION - engineStatus
 		engineStatus += acceleration
+
 	if Input.is_action_pressed("right_engine_deffering"):
 		var deffering = Input.get_joy_axis(0, JOY_AXIS_3) * FORCE_MULTIPLIER
 		if engineStatus + deffering > MAX_DEFFERING:
 			deffering = MAX_DEFFERING - engineStatus
 		engineStatus += deffering
+
 	engineMemoryStatus = engineStatus
 
 	if Input.is_action_pressed("right_engine_culvert_change"):
@@ -34,5 +33,6 @@ func _integrate_forces(state):
 		
 	audio_tick(sound, engineStatus, enginePreviousStatus)
 
+	setEngineStatusBars(engineStatus)
 	_set_calculated_force("Right", engineStatus)
 	enginePreviousStatus = engineStatus

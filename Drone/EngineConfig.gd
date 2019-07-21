@@ -15,6 +15,15 @@ var enginePreStartPitch = 0
 var enginePreStopStatus = 0
 var framesPlaying = 0
 
+onready var barUp = get_node("Control/EngineAcceleration")
+onready var barDown = get_node("Control/EngineDeffering")
+
+func _ready():
+	barUp.max_value = -MAX_ACCELERATION
+	barUp.value = 0
+	barDown.max_value = MAX_DEFFERING
+	barDown.value = 0
+
 func _set_calculated_force(engineSide, engineStatus):
 	var appliedForce = Vector2(0,engineStatus)
 	set_applied_force(appliedForce.rotated(global_rotation))
@@ -69,3 +78,11 @@ func get_pitch(engineStatus):
 	
 	var statusRatio = float(engineStatus) / maxStatus
 	return MIN_PITCH + (MAX_PITCH - MIN_PITCH) * statusRatio
+	
+func setEngineStatusBars(engineStatus):
+	if	engineStatus > 0:
+		barUp.value = 0
+		barDown.value = engineStatus
+	else:
+		barUp.value = -engineStatus
+		barDown.value = 0
