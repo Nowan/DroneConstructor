@@ -17,6 +17,10 @@ func _process(data):
 	for block_id in range(NUM_BLOCKS):
 		if !watchers[block_id].is_colliding():
 			create_brick(block_id)
+			
+func _input(event):
+	if event.is_action_pressed("exit"):
+		get_tree().quit()
 
 func create_watcher(id: int):
 	var new_watcher = RayCast2D.new()
